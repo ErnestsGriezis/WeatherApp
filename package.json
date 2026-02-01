@@ -1,0 +1,11 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "scripts": {
+    "sass:build": "sass css/style.scss css/compiled/style.css --no-source-map",
+    "sass:watch": "sass --watch css/style.scss:css/compiled/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}
