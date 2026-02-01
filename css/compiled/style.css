@@ -1,3 +1,106 @@
+* {
+  font-family: FontRegular, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s linear;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+a:focus {
+  outline: none;
+}
+a::before, a::after {
+  transition: all 0.2s linear;
+}
+
+.main-container {
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: 1440px;
+}
+
+.last-child-without-margin > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.site-header {
+  border-bottom: 1px solid #eee;
+}
+.site-header .site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+.site-header .site-nav .site-logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.site-header .site-nav .site-logo img {
+  display: block;
+  height: 100%;
+  object-fit: contain;
+}
+.site-header .site-nav .nav-list {
+  display: flex;
+  gap: 24px;
+}
+.site-header .site-nav .nav-list .nav-item {
+  list-style: none;
+}
+.site-header .site-nav .nav-list .nav-item .nav-link {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cities-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 45px;
+  margin-top: 72px;
+}
+.cities-grid .city-card {
+  width: calc((100% - 120px) / 4.001);
+}
+.cities-grid .city-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.cities-grid .city-card .inner-city-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 32px 20px;
+  border: solid 1px #e8e5db;
+  height: 100%;
+}
+.cities-grid .city-card .inner-city-card .city-info-wrapper .city-name {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.cities-grid .city-card .inner-city-card .city-info-wrapper .city-temp {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.cities-grid .city-card .inner-city-card .city-info-wrapper .city-meta {
+  font-size: 13px;
+  color: #777;
+}
+.cities-grid .city-card .inner-city-card .city-icon {
+  margin-left: auto;
+  display: block;
+  height: auto;
+  max-height: 80px;
+  flex-shrink: 0;
+}
 
 /*# sourceMappingURL=style.css.map */

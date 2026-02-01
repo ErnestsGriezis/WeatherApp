@@ -1,1 +1,9 @@
-@import "components/header";
+// Common
+@use "common/base";
+@use "common/common";
+
+
+// Components
+@use "components/header";
+@use "components/cities";
+

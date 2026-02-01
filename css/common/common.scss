@@ -1,0 +1,64 @@
+@use "base" as *;
+
+* {
+  font-family: FontRegular, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //outline: 1px solid red;
+}
+
+//body {
+//  font-family: FontRegular;
+//  color: $defaultTextColor;
+//  font-size: 18px;
+//  transition: all 0.2s linear;
+//  overflow-x: hidden;
+//
+//  &::-webkit-scrollbar {
+//    width: $scrollBarWidth;
+//  }
+//
+//  &::-webkit-scrollbar-track {
+//    background-color: $white;
+//  }
+//
+//  &::-webkit-scrollbar-thumb {
+//    background-color: $defaultTextColor;
+//  }
+//
+//}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s linear;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::before,
+  &::after {
+    transition: all 0.2s linear;
+  }
+}
+
+.main-container {
+  margin: 0 auto;
+  padding: 0 16px;
+  max-width: $mainContainer;
+}
+
+
+.last-child-without-margin {
+  & > *:last-child {
+    margin-bottom: 0 !important;
+  }
+}
+

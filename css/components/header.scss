@@ -1,0 +1,38 @@
+@use "../common/base" as *;
+
+.site-header {
+  border-bottom: 1px solid #eee;
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $headerHeight;
+
+    .site-logo {
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      img {
+        display: block;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .nav-list {
+      display: flex;
+      gap: 24px;
+
+      .nav-item {
+        list-style: none;
+
+        .nav-link {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
