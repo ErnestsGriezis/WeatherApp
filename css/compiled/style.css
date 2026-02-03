@@ -27,12 +27,102 @@ a::before, a::after {
   max-width: 1440px;
 }
 
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+}
+
+.btn {
+  font-family: FontMedium !important;
+  font-size: 14px !important;
+  color: #ffffff !important;
+  width: fit-content;
+  padding: 18px 32px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+@media screen and (max-width: 1366px) {
+  .btn {
+    padding: 16px 28px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .btn {
+    font-size: 13px;
+    padding: 14px 24px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .btn {
+    font-size: 12px;
+    padding: 12px 20px;
+  }
+}
+.btn-default {
+  background: #1f86d1 !important;
+}
+.btn-default:hover {
+  background: #f5a623 !important;
+  color: #ffffff !important;
+}
+
 .last-child-without-margin > *:last-child {
   margin-bottom: 0 !important;
 }
 
+@font-face {
+  font-family: "FontRegular";
+  src: url("../../fonts/Montserrat-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "FontMedium";
+  src: url("../../fonts/Montserrat-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "FontBold";
+  src: url("../../fonts/Montserrat-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "FontExtraBold";
+  src: url("../../fonts/Montserrat-ExtraBold.woff2") format("woff2");
+  font-display: swap;
+}
+.font-regular {
+  font-family: "FontRegular", sans-serif;
+}
+
+.font-medium {
+  font-family: "FontMedium", sans-serif;
+}
+
+.font-bold {
+  font-family: "FontBold", sans-serif;
+}
+
+.font-extra-bold {
+  font-family: "FontExtraBold", sans-serif;
+}
+
+strong,
+b {
+  font-family: "FontBold", sans-serif;
+}
+
 .site-header {
-  border-bottom: 1px solid #eee;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(11, 18, 32, 0.12);
 }
 .site-header .site-nav {
   display: flex;
@@ -58,16 +148,35 @@ a::before, a::after {
   list-style: none;
 }
 .site-header .site-nav .nav-list .nav-item .nav-link {
+  font-family: FontBold;
   font-size: 14px;
-  font-weight: 500;
+  color: #0b1220;
+  text-decoration: none;
+  padding: 8px 0;
+  position: relative;
+}
+.site-header .site-nav .nav-list .nav-item .nav-link:hover {
+  color: #1f86d1;
+}
+.site-header .site-nav .nav-list .nav-item .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  background: #f5a623;
+}
+.site-header .site-nav .nav-list .nav-item .nav-link:hover::after {
+  width: 100%;
 }
 
 .cities-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  column-gap: 40px;
+  row-gap: 48px;
   margin-bottom: 45px;
-  margin-top: 72px;
 }
 .cities-grid .city-card {
   width: calc((100% - 120px) / 4.001);
@@ -80,10 +189,11 @@ a::before, a::after {
   background: #ffffff;
   border-radius: 10px;
   padding: 32px 20px;
-  border: solid 1px #e8e5db;
+  border: solid 1px rgba(11, 18, 32, 0.12);
   height: 100%;
 }
 .cities-grid .city-card .inner-city-card .city-info-wrapper .city-name {
+  font-family: FontMedium;
   font-size: 18px;
   margin-bottom: 12px;
 }
@@ -93,7 +203,7 @@ a::before, a::after {
 }
 .cities-grid .city-card .inner-city-card .city-info-wrapper .city-meta {
   font-size: 13px;
-  color: #777;
+  color: rgba(11, 18, 32, 0.6);
 }
 .cities-grid .city-card .inner-city-card .city-icon {
   margin-left: auto;
@@ -101,6 +211,96 @@ a::before, a::after {
   height: auto;
   max-height: 80px;
   flex-shrink: 0;
+}
+
+@media screen and (max-width: 1440px) {
+  .cities-grid {
+    column-gap: 32px;
+    row-gap: 42px;
+  }
+  .cities-grid .city-card {
+    width: calc((100% - 64px) / 3.001);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .cities-grid {
+    column-gap: 16px;
+    row-gap: 24px;
+  }
+  .cities-grid .city-card {
+    width: calc((100% - 16px) / 2.001);
+  }
+}
+@media screen and (max-width: 767px) {
+  .cities-grid .city-card {
+    width: 100%;
+  }
+}
+.cities-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 0;
+  border-bottom: 1px solid #e8e5db;
+}
+.cities-controls .switch-units-wrapper {
+  margin-left: auto;
+}
+
+.site-footer {
+  margin-top: 56px;
+  background: #f6f9fc;
+  border-top: 1px solid rgba(11, 18, 32, 0.12);
+  padding: 28px 0;
+}
+.site-footer .footer-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+.site-footer .footer-logo {
+  height: auto;
+  max-width: 150px;
+  display: block;
+  margin-bottom: 10px;
+}
+.site-footer .footer-text {
+  color: rgba(11, 18, 32, 0.6);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.site-footer .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.site-footer .footer-link {
+  color: #0b1220;
+  text-decoration: none;
+  font-size: 14px;
+}
+.site-footer .footer-link:hover {
+  color: #1f86d1;
+  text-decoration: underline;
+  text-decoration-color: #f5a623;
+  text-underline-offset: 3px;
+}
+.site-footer .footer-copy {
+  margin-left: auto;
+  color: rgba(11, 18, 32, 0.6);
+  font-size: 13px;
+}
+
+@media screen and (max-width: 767px) {
+  .site-footer .footer-inner {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .site-footer .footer-copy {
+    margin-left: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

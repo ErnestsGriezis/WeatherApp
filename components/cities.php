@@ -3,41 +3,61 @@
 
 $config = require_once "./config.php";
 $api_key = $config['OPENWEATHER_API_KEY'];
-
+require_once __DIR__ . '/../functions/weather.php';
 
 $cities = [
-    [
-        'id' => 1,
-        'name' => 'Riga',
-    ],
-    [
-        'id' => 2,
-        'name' => 'Ventspils',
-    ],
-    [
-        'id' => 3,
-        'name' => 'Jelgava',
-    ],
-    [
-        'id' => 4,
-        'name' => 'Liepāja',
-    ],
-    [
-        'id' => 5,
-        'name' => 'Daugavpils',
-    ],
-    [
-        'id' => 6,
-        'name' => 'Valmiera',
-    ],
-    [
-        'id' => 7,
-        'name' => 'Jūrmala',
-    ],
+        [
+                'id' => 1,
+                'name' => 'Riga',
+        ],
+        [
+                'id' => 2,
+                'name' => 'Ventspils',
+        ],
+        [
+                'id' => 3,
+                'name' => 'Jelgava',
+        ],
+        [
+                'id' => 4,
+                'name' => 'Liepāja',
+        ],
+        [
+                'id' => 5,
+                'name' => 'Daugavpils',
+        ],
+        [
+                'id' => 6,
+                'name' => 'Valmiera',
+        ],
+        [
+                'id' => 7,
+                'name' => 'Jūrmala',
+        ],
+        [
+                'id' => 8,
+                'name' => 'Jūrkalne',
+        ],
+        [
+                'id' => 9,
+                'name' => 'Mārupe',
+        ],
+        [
+                'id' => 10,
+                'name' => 'Ozolnieki',
+        ],
+        [
+                'id' => 10,
+                'name' => 'Ozolnieki',
+        ],
 ];
 
-?>
+$units = $_GET['units'] ?? 'metric';
+if ($units !== 'metric' && $units !== 'imperial') {
+    $units = 'metric';
+}
 
+?>
 
 <div class="main-container">
     <section class="cities-grid">
@@ -46,42 +66,13 @@ $cities = [
             <?php
 
             $city_name = $city['name'];
+            $weather = get_city_weather($city_name, $api_key, $units);
 
-            $has_weather_data = false;
-            $city_temp = null;
-            $city_meta = '';
-            $icon_url = null;
-            $icon_alt = '';
-
-            $encoded_city = urlencode($city_name);
-            $url = "https://api.openweathermap.org/data/2.5/weather?q=$encoded_city&units=metric&appid=$api_key";
-
-            $json = file_get_contents($url);
-            $data = json_decode($json, true);
-
-            $has_weather_data = ($data['cod'] ?? null) === 200;
-
-            if ($has_weather_data) {
-                $city_temp = round($data['main']['temp']);
-                $city_weather = $data['weather'][0]['main'] ?? '';
-                $wind_speed = null;
-                if (isset($data['wind']['speed'])) {
-                    $wind_speed = round((float)$data['wind']['speed'], 1);
-                }
-
-                $city_icon_code = $data['weather'][0]['icon'] ?? null;
-                $icon_alt = $data['weather'][0]['description'] ?? '';
-
-                if (!empty($city_icon_code)) {
-                    $icon_url = "https://openweathermap.org/img/wn/{$city_icon_code}@2x.png";
-                }
-
-                if ($wind_speed !== null) {
-                    $city_meta = $city_weather . ' · Wind ' . $wind_speed . ' m/s';
-                } else {
-                    $city_meta = $city_weather;
-                }
-            }
+            $has_weather_data = $weather['ok'];
+            $city_temp = $weather['temp'];
+            $icon_url = $weather['icon_url'];
+            $icon_alt = $weather['icon_alt'];
+            $wind_speed = $weather['wind_speed'];
 
             ?>
 
@@ -95,12 +86,19 @@ $cities = [
                             <?php endif; ?>
 
                             <?php if ($city_temp !== null): ?>
-                                <div class="city-temp"><?= htmlspecialchars((string)$city_temp); ?> °C</div>
+                                <div class="city-temp">
+                                    <?= htmlspecialchars((string)$city_temp); ?>
+                                    <?= get_temperature_unit_symbol($units); ?>
+                                </div>
                             <?php endif; ?>
 
-                            <?php if (!empty($city_meta)): ?>
-                                <div class="city-meta"><?= htmlspecialchars($city_meta); ?></div>
+                            <?php if ($wind_speed !== null): ?>
+                                <div class="city-meta">
+                                    Wind <?= htmlspecialchars((string)$wind_speed); ?>
+                                    <?= get_wind_unit_symbol($units); ?>
+                                </div>
                             <?php endif; ?>
+
                         </div>
 
                         <?php if (!empty($icon_url)): ?>

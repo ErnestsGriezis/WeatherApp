@@ -1,7 +1,8 @@
 @use "../common/base" as *;
 
 .site-header {
-  border-bottom: 1px solid #eee;
+  background: $white;
+  border-bottom: 1px solid $border;
 
   .site-nav {
     display: flex;
@@ -29,8 +30,30 @@
         list-style: none;
 
         .nav-link {
+          font-family: FontBold;
           font-size: 14px;
-          font-weight: 500;
+          color: $ink;
+          text-decoration: none;
+          padding: 8px 0;
+          position: relative;
+
+          &:hover {
+            color: $brandBlue;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 2px;
+            width: 0;
+            height: 2px;
+            background: $brandOrange;
+          }
+
+          &:hover::after {
+            width: 100%;
+          }
         }
       }
     }

@@ -55,6 +55,54 @@ a {
   max-width: $mainContainer;
 }
 
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+}
+
+.btn {
+  font-family: FontMedium !important;
+  font-size: 14px !important;
+  color: $white !important;
+  width: fit-content;
+  padding: 18px 32px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s linear;
+  cursor: pointer;
+
+  @media screen and (max-width: 1366px) {
+    padding: 16px 28px;
+
+  }
+  @media screen and (max-width: 1024px) {
+    font-size: 13px;
+    padding: 14px 24px;
+
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    padding: 12px 20px;
+
+  }
+
+  &-default {
+    background: $brandBlue !important;
+
+    &:hover {
+      background: $brandOrange !important;
+      color: $white !important;
+    }
+  }
+}
+
 
 .last-child-without-margin {
   & > *:last-child {

@@ -3,9 +3,9 @@
 .cities-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  column-gap: 40px;
+  row-gap: 48px;
   margin-bottom: 45px;
-  margin-top: 72px;
 
   .city-card {
     width: calc((100% - (40px * 3)) / 4.001);
@@ -19,11 +19,12 @@
       background: $white;
       border-radius: 10px;
       padding: 32px 20px;
-      border: solid 1px $defaultBorderColor;
+      border: solid 1px $border;
       height: 100%;
 
       .city-info-wrapper {
         .city-name {
+          font-family: FontMedium;
           font-size: 18px;
           margin-bottom: 12px;
         }
@@ -35,7 +36,7 @@
 
         .city-meta {
           font-size: 13px;
-          color: #777;
+          color: $muted;
         }
       }
 
@@ -47,6 +48,38 @@
         flex-shrink: 0;
       }
 
+    }
+  }
+}
+
+
+@media screen and (max-width: $mainContainer) {
+  .cities-grid {
+    column-gap: 32px;
+    row-gap: 42px;
+
+    .city-card {
+      width: calc((100% - (32px * 2)) / 3.001);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .cities-grid {
+    column-gap: 16px;
+    row-gap: 24px;
+
+    .city-card {
+      width: calc((100% - (16px)) / 2.001);
+    }
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .cities-grid {
+    .city-card {
+      width: 100%;
     }
   }
 }

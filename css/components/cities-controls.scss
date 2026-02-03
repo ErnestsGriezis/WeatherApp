@@ -1,0 +1,13 @@
+@use "../common/base" as *;
+
+.cities-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 0;
+  border-bottom: 1px solid $defaultBorderColor;
+
+  .switch-units-wrapper {
+    margin-left: auto;
+  }
+}

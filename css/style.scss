@@ -1,9 +1,11 @@
 // Common
 @use "common/base";
 @use "common/common";
-
+@use "common/fonts";
 
 // Components
 @use "components/header";
 @use "components/cities";
+@use "components/cities-controls";
+@use "components/footer";
 

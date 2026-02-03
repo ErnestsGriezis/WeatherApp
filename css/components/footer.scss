@@ -1,0 +1,68 @@
+@use "../common/base" as *;
+
+.site-footer {
+  margin-top: 56px;
+  background: $bgSoft;
+  border-top: 1px solid $border;
+  padding: 28px 0;
+
+  .footer-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+
+  .footer-logo {
+    height: auto;
+    max-width: 150px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .footer-text {
+    color: $muted;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .footer-link {
+    color: $ink;
+    text-decoration: none;
+    font-size: 14px;
+
+    &:hover {
+      color: $brandBlue;
+      text-decoration: underline;
+      text-decoration-color: $brandOrange;
+      text-underline-offset: 3px;
+    }
+  }
+
+  .footer-copy {
+    margin-left: auto;
+    color: $muted;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .site-footer {
+    .footer-inner {
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .footer-copy {
+      margin-left: 0;
+    }
+  }
+}

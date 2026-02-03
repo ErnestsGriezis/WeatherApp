@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "FontRegular";
+  src: url("../../fonts/Montserrat-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FontMedium";
+  src: url("../../fonts/Montserrat-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FontBold";
+  src: url("../../fonts/Montserrat-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FontExtraBold";
+  src: url("../../fonts/Montserrat-ExtraBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+.font-regular {
+  font-family: "FontRegular", sans-serif;
+}
+
+.font-medium {
+  font-family: "FontMedium", sans-serif;
+}
+
+.font-bold {
+  font-family: "FontBold", sans-serif;
+}
+
+.font-extra-bold {
+  font-family: "FontExtraBold", sans-serif;
+}
+
+strong,
+b {
+  font-family: "FontBold", sans-serif;
+}
