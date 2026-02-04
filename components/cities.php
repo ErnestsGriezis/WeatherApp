@@ -4,53 +4,8 @@
 $config = require_once "./config.php";
 $api_key = $config['OPENWEATHER_API_KEY'];
 require_once __DIR__ . '/../functions/weather.php';
+$cities = require __DIR__ . '/../data/cities.php';
 
-$cities = [
-        [
-                'id' => 1,
-                'name' => 'Riga',
-        ],
-        [
-                'id' => 2,
-                'name' => 'Ventspils',
-        ],
-        [
-                'id' => 3,
-                'name' => 'Jelgava',
-        ],
-        [
-                'id' => 4,
-                'name' => 'Liepāja',
-        ],
-        [
-                'id' => 5,
-                'name' => 'Daugavpils',
-        ],
-        [
-                'id' => 6,
-                'name' => 'Valmiera',
-        ],
-        [
-                'id' => 7,
-                'name' => 'Jūrmala',
-        ],
-        [
-                'id' => 8,
-                'name' => 'Jūrkalne',
-        ],
-        [
-                'id' => 9,
-                'name' => 'Mārupe',
-        ],
-        [
-                'id' => 10,
-                'name' => 'Ozolnieki',
-        ],
-        [
-                'id' => 10,
-                'name' => 'Ozolnieki',
-        ],
-];
 
 $units = $_GET['units'] ?? 'metric';
 if ($units !== 'metric' && $units !== 'imperial') {
@@ -77,7 +32,8 @@ if ($units !== 'metric' && $units !== 'imperial') {
             ?>
 
             <?php if ($has_weather_data): ?>
-                <a href="city.php?id=<?= $city['id']; ?>" class="city-card">
+                <a href="/weatherapp/components/city.php?id=<?= $city['id']; ?>&units=<?= htmlspecialchars($units) ?>"
+                   class="city-card">
                     <article class="inner-city-card last-child-without-margin">
 
                         <div class="city-info-wrapper">

@@ -1,0 +1,392 @@
+// css/components/city-details.scss
+@use "../common/base" as *;
+
+.city-details-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 18px 0 14px;
+
+  .back-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    border: 1px solid $border;
+    background: $white;
+    text-decoration: none;
+    color: $ink;
+    box-shadow: none;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+    &:hover {
+      box-shadow: $defaultBoxShadow;
+      transform: translateY(-1px);
+    }
+  }
+
+  .top-actions {
+    display: inline-flex;
+    align-items: center;
+    background: $white;
+    border: 1px solid $border;
+    border-radius: 999px;
+    overflow: hidden;
+
+    .units-btn {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      padding: 10px 14px;
+      font-family: FontBold;
+      font-size: 13px;
+      color: $muted;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+
+      &:hover {
+        color: $ink;
+        background: $bgSoft;
+      }
+
+      &.is-active {
+        color: $ink;
+        background: rgba($brandLightBlue, 0.22);
+      }
+    }
+  }
+}
+
+.city-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 20px;
+  border-radius: 12px;
+  background: $white;
+  border: 1px solid $border;
+  box-shadow: none;
+  margin-bottom: 14px;
+
+  .hero-left {
+    .hero-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .city-title {
+      font-family: FontExtraBold;
+      font-size: 34px;
+      line-height: 1.1;
+      margin: 0;
+      color: $ink;
+    }
+
+    .city-badge {
+      display: inline-flex;
+      align-items: center;
+      height: 26px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid $border;
+      background: $bgSoft;
+      color: $ink;
+      font-family: FontBold;
+      font-size: 12px;
+    }
+
+    .hero-sub {
+      margin-top: 8px;
+      font-size: 14px;
+      color: $muted;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+
+      .highlight {
+        background: $bgSoft;
+        border: 1px solid $border;
+        border-radius: 10px;
+        padding: 10px 12px;
+        min-width: 150px;
+
+        .label {
+          font-size: 12px;
+          color: $muted;
+          margin-bottom: 6px;
+        }
+
+        .value {
+          font-family: FontBold;
+          font-size: 16px;
+          color: $ink;
+        }
+      }
+    }
+  }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    .hero-icon {
+      width: 78px;
+      height: 78px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .hero-temp {
+      text-align: right;
+
+      .temp {
+        font-family: FontExtraBold;
+        font-size: 44px;
+        line-height: 1;
+        color: $ink;
+      }
+
+      .temp-meta {
+        margin-top: 8px;
+        font-size: 13px;
+        color: $muted;
+      }
+    }
+  }
+}
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 16px;
+  margin-bottom: 18px;
+
+  .stat-card {
+    width: calc((100% - (16px * 2)) / 3.001);
+    background: $white;
+    border: 1px solid $border;
+    border-radius: 12px;
+    padding: 14px 14px;
+
+    &.wide {
+      width: calc((100% - 16px) / 2.001);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $muted;
+      margin-bottom: 10px;
+      font-family: FontBold;
+    }
+
+    .stat-value {
+      font-family: FontExtraBold;
+      font-size: 22px;
+      color: $ink;
+      margin-bottom: 6px;
+    }
+
+    .stat-sub {
+      font-size: 13px;
+      color: $muted;
+    }
+
+    &:hover {
+      box-shadow: $defaultBoxShadow;
+    }
+  }
+}
+
+.details-split {
+  display: flex;
+  gap: 16px;
+
+  .panel {
+    width: 50%;
+    background: $white;
+    border: 1px solid $border;
+    border-radius: 12px;
+    padding: 16px 16px;
+
+    .panel-title {
+      margin: 0 0 12px;
+      font-family: FontBold;
+      font-size: 16px;
+      color: $ink;
+    }
+
+    .rows {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: $bgSoft;
+        border: 1px solid $border;
+
+        .k {
+          color: $muted;
+          font-size: 13px;
+        }
+
+        .v {
+          color: $ink;
+          font-family: FontBold;
+          font-size: 13px;
+        }
+      }
+    }
+
+    .wind-card {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 12px;
+      border-radius: 12px;
+      background: $bgSoft;
+      border: 1px solid $border;
+
+      .wind-main {
+        .wind-speed {
+          display: flex;
+          align-items: baseline;
+          gap: 6px;
+
+          .num {
+            font-family: FontExtraBold;
+            font-size: 34px;
+            color: $ink;
+            line-height: 1;
+          }
+
+          .unit {
+            font-size: 13px;
+            color: $muted;
+            font-family: FontBold;
+          }
+        }
+
+        .wind-meta {
+          margin-top: 8px;
+          font-size: 13px;
+          color: $muted;
+        }
+      }
+
+      .wind-compass {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        min-width: 120px;
+
+        .compass {
+          width: 84px;
+          height: 84px;
+          border-radius: 999px;
+          border: 1px solid $border;
+          background: $white;
+          position: relative;
+
+          .needle {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 2px;
+            height: 30px;
+            background: $brandOrange;
+            transform-origin: bottom center;
+            transform: translate(-50%, -100%) rotate(0deg);
+            border-radius: 4px;
+          }
+
+          .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: $brandBlue;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        .wind-deg {
+          font-size: 13px;
+          color: $muted;
+          font-family: FontBold;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .stats-grid {
+    .stat-card {
+      width: calc((100% - 16px) / 2.001);
+
+      &.wide {
+        width: 100%;
+      }
+    }
+  }
+
+  .details-split {
+    flex-direction: column;
+
+    .panel {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .city-hero {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .hero-right {
+      width: 100%;
+      justify-content: space-between;
+
+      .hero-temp {
+        text-align: left;
+      }
+    }
+
+    .hero-left {
+      .city-title {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .city-details-top {
+    flex-direction: column;
+    align-items: stretch;
+
+    .top-actions {
+      justify-content: center;
+    }
+  }
+}

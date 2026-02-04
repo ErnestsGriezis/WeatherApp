@@ -1,15 +1,11 @@
 <?php
 $currentUnits = $_GET['units'] ?? 'metric';
-
-$nextUnits = 'metric';
-$buttonLabel = '°C';
-
-if ($currentUnits === 'metric') {
-    $nextUnits = 'imperial';
-    $buttonLabel = '°F';
+if ($currentUnits !== 'metric' && $currentUnits !== 'imperial') {
+    $currentUnits = 'metric';
 }
 
 ?>
+
 <div class="main-container">
     <div class="cities-controls">
 
@@ -17,14 +13,10 @@ if ($currentUnits === 'metric') {
 
         </div>
 
-
-        <div class="switch-units-wrapper">
-            <form method="GET">
-                <input type="hidden" name="units" value="<?= $nextUnits ?>">
-                <button type="submit" class="btn btn-default">
-                    <?= $buttonLabel ?>
-                </button>
-            </form>
+        <div class="units-switch">
+            <a class="units-btn <?= $currentUnits === 'metric' ? 'is-active' : '' ?>" href="?units=metric">°C</a>
+            <a class="units-btn <?= $currentUnits === 'imperial' ? 'is-active' : '' ?>" href="?units=imperial">°F</a>
         </div>
+
     </div>
 </div>

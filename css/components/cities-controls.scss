@@ -5,9 +5,41 @@
   align-items: center;
   gap: 16px;
   padding: 28px 0;
-  border-bottom: 1px solid $defaultBorderColor;
 
-  .switch-units-wrapper {
+  .add-city {
+
+  }
+
+  .units-switch {
     margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    background: $white;
+    border: 1px solid $border;
+    border-radius: 999px;
+    overflow: hidden;
+
+    .units-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      min-width: 52px;
+      font-family: FontBold;
+      font-size: 13px;
+      text-decoration: none;
+      color: $muted;
+      background: transparent;
+
+      &:hover {
+        color: $ink;
+        background: $bgSoft;
+      }
+
+      &.is-active {
+        color: $ink;
+        background: rgba($brandLightBlue, 0.22);
+      }
+    }
   }
 }

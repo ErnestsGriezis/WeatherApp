@@ -13,12 +13,13 @@
     .site-logo {
       display: flex;
       align-items: center;
-      height: 100%;
+      height: $headerHeight;
 
       img {
-        display: block;
-        height: 100%;
+        max-width: 100%;
+        max-height: calc($headerHeight - 20px);
         object-fit: contain;
+        display: block;
       }
     }
 

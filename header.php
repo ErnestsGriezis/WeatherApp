@@ -20,8 +20,8 @@
 <header class="site-header">
     <div class="main-container">
         <nav class="site-nav">
-            <a href="index.php" class="site-logo">
-                <img src="images/logo.png" alt="WeatherApp logo">
+            <a href="/weatherapp/index.php" class="site-logo">
+                <img src="/weatherapp/images/logo.png" alt="WeatherApp logo">
             </a>
 
             <ul class="nav-list">

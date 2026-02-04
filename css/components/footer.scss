@@ -8,36 +8,35 @@
 
   .footer-inner {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 32px;
   }
 
 
   .footer-logo {
-    height: auto;
-    max-width: 150px;
-    display: block;
-    margin-bottom: 10px;
+    display: inline-flex;
+
+    > img {
+      max-width: 100%;
+      max-height: 60px;
+      object-fit: contain;
+      display: block;
+    }
   }
 
-  .footer-text {
-    color: $muted;
-    font-size: 14px;
-    line-height: 1.5;
-  }
 
   .footer-links {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    gap: 10px;
+    display: flex;
+    margin-right: auto;
+    gap: 16px;
   }
 
   .footer-link {
     color: $ink;
     text-decoration: none;
     font-size: 14px;
+    align-self: center;
 
     &:hover {
       color: $brandBlue;
