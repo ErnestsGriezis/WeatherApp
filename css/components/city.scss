@@ -1,63 +1,4 @@
-// css/components/city-details.scss
 @use "../common/base" as *;
-
-.city-details-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin: 18px 0 14px;
-
-  .back-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-radius: 999px;
-    border: 1px solid $border;
-    background: $white;
-    text-decoration: none;
-    color: $ink;
-    box-shadow: none;
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
-
-    &:hover {
-      box-shadow: $defaultBoxShadow;
-      transform: translateY(-1px);
-    }
-  }
-
-  .top-actions {
-    display: inline-flex;
-    align-items: center;
-    background: $white;
-    border: 1px solid $border;
-    border-radius: 999px;
-    overflow: hidden;
-
-    .units-btn {
-      appearance: none;
-      border: 0;
-      background: transparent;
-      padding: 10px 14px;
-      font-family: FontBold;
-      font-size: 13px;
-      color: $muted;
-      cursor: pointer;
-      transition: background 0.15s ease, color 0.15s ease;
-
-      &:hover {
-        color: $ink;
-        background: $bgSoft;
-      }
-
-      &.is-active {
-        color: $ink;
-        background: rgba($brandLightBlue, 0.22);
-      }
-    }
-  }
-}
 
 .city-hero {
   display: flex;
@@ -81,15 +22,12 @@
     .city-title {
       font-family: FontExtraBold;
       font-size: 34px;
-      line-height: 1.1;
-      margin: 0;
       color: $ink;
     }
 
     .city-badge {
       display: inline-flex;
       align-items: center;
-      height: 26px;
       padding: 0 10px;
       border-radius: 999px;
       border: 1px solid $border;
@@ -151,7 +89,6 @@
       .temp {
         font-family: FontExtraBold;
         font-size: 44px;
-        line-height: 1;
         color: $ink;
       }
 
@@ -183,12 +120,11 @@
     }
 
     .stat-label {
+      font-family: FontBold;
       font-size: 12px;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: $muted;
       margin-bottom: 10px;
-      font-family: FontBold;
     }
 
     .stat-value {
@@ -203,9 +139,6 @@
       color: $muted;
     }
 
-    &:hover {
-      box-shadow: $defaultBoxShadow;
-    }
   }
 }
 
@@ -221,8 +154,8 @@
     padding: 16px 16px;
 
     .panel-title {
-      margin: 0 0 12px;
       font-family: FontBold;
+      margin: 0 0 12px;
       font-size: 16px;
       color: $ink;
     }
@@ -247,8 +180,8 @@
         }
 
         .v {
-          color: $ink;
           font-family: FontBold;
+          color: $ink;
           font-size: 13px;
         }
       }
@@ -273,7 +206,6 @@
             font-family: FontExtraBold;
             font-size: 34px;
             color: $ink;
-            line-height: 1;
           }
 
           .unit {
@@ -330,16 +262,15 @@
         }
 
         .wind-deg {
+          font-family: FontBold;
           font-size: 13px;
           color: $muted;
-          font-family: FontBold;
         }
       }
     }
   }
 }
 
-/* Responsive */
 @media screen and (max-width: 1024px) {
   .stats-grid {
     .stat-card {
@@ -378,15 +309,6 @@
       .city-title {
         font-size: 30px;
       }
-    }
-  }
-
-  .city-details-top {
-    flex-direction: column;
-    align-items: stretch;
-
-    .top-actions {
-      justify-content: center;
     }
   }
 }

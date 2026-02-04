@@ -326,58 +326,6 @@ b {
     margin-left: 0;
   }
 }
-.city-details-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin: 18px 0 14px;
-}
-.city-details-top .back-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(11, 18, 32, 0.12);
-  background: #ffffff;
-  text-decoration: none;
-  color: #0b1220;
-  box-shadow: none;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
-}
-.city-details-top .back-pill:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transform: translateY(-1px);
-}
-.city-details-top .top-actions {
-  display: inline-flex;
-  align-items: center;
-  background: #ffffff;
-  border: 1px solid rgba(11, 18, 32, 0.12);
-  border-radius: 999px;
-  overflow: hidden;
-}
-.city-details-top .top-actions .units-btn {
-  appearance: none;
-  border: 0;
-  background: transparent;
-  padding: 10px 14px;
-  font-family: FontBold;
-  font-size: 13px;
-  color: rgba(11, 18, 32, 0.6);
-  cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
-}
-.city-details-top .top-actions .units-btn:hover {
-  color: #0b1220;
-  background: #f6f9fc;
-}
-.city-details-top .top-actions .units-btn.is-active {
-  color: #0b1220;
-  background: rgba(100, 210, 255, 0.22);
-}
-
 .city-hero {
   display: flex;
   align-items: center;
@@ -398,14 +346,11 @@ b {
 .city-hero .hero-left .city-title {
   font-family: FontExtraBold;
   font-size: 34px;
-  line-height: 1.1;
-  margin: 0;
   color: #0b1220;
 }
 .city-hero .hero-left .city-badge {
   display: inline-flex;
   align-items: center;
-  height: 26px;
   padding: 0 10px;
   border-radius: 999px;
   border: 1px solid rgba(11, 18, 32, 0.12);
@@ -459,7 +404,6 @@ b {
 .city-hero .hero-right .hero-temp .temp {
   font-family: FontExtraBold;
   font-size: 44px;
-  line-height: 1;
   color: #0b1220;
 }
 .city-hero .hero-right .hero-temp .temp-meta {
@@ -486,12 +430,11 @@ b {
   width: calc((100% - 16px) / 2.001);
 }
 .stats-grid .stat-card .stat-label {
+  font-family: FontBold;
   font-size: 12px;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: rgba(11, 18, 32, 0.6);
   margin-bottom: 10px;
-  font-family: FontBold;
 }
 .stats-grid .stat-card .stat-value {
   font-family: FontExtraBold;
@@ -502,9 +445,6 @@ b {
 .stats-grid .stat-card .stat-sub {
   font-size: 13px;
   color: rgba(11, 18, 32, 0.6);
-}
-.stats-grid .stat-card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .details-split {
@@ -519,8 +459,8 @@ b {
   padding: 16px 16px;
 }
 .details-split .panel .panel-title {
-  margin: 0 0 12px;
   font-family: FontBold;
+  margin: 0 0 12px;
   font-size: 16px;
   color: #0b1220;
 }
@@ -543,8 +483,8 @@ b {
   font-size: 13px;
 }
 .details-split .panel .rows .row .v {
-  color: #0b1220;
   font-family: FontBold;
+  color: #0b1220;
   font-size: 13px;
 }
 .details-split .panel .wind-card {
@@ -565,7 +505,6 @@ b {
   font-family: FontExtraBold;
   font-size: 34px;
   color: #0b1220;
-  line-height: 1;
 }
 .details-split .panel .wind-card .wind-main .wind-speed .unit {
   font-size: 13px;
@@ -614,12 +553,11 @@ b {
   transform: translate(-50%, -50%);
 }
 .details-split .panel .wind-card .wind-compass .wind-deg {
+  font-family: FontBold;
   font-size: 13px;
   color: rgba(11, 18, 32, 0.6);
-  font-family: FontBold;
 }
 
-/* Responsive */
 @media screen and (max-width: 1024px) {
   .stats-grid .stat-card {
     width: calc((100% - 16px) / 2.001);
@@ -648,13 +586,6 @@ b {
   }
   .city-hero .hero-left .city-title {
     font-size: 30px;
-  }
-  .city-details-top {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .city-details-top .top-actions {
-    justify-content: center;
   }
 }
 
