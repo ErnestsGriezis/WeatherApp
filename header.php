@@ -6,10 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="fonts/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/weatherapp/fonts/Montserrat-Regular.woff2" as="font" type="font/woff2"
+          crossorigin="anonymous">
+    <link rel="preload" href="/weatherapp/fonts/Montserrat-Bold.woff2" as="font" type="font/woff2"
+          crossorigin="anonymous">
+    <link rel="preload" href="/weatherapp/fonts/Montserrat-Medium.woff2" as="font" type="font/woff2"
+          crossorigin="anonymous">
+    <link rel="preload" href="/weatherapp/fonts/Montserrat-ExtraBold.woff2" as="font" type="font/woff2"
+          crossorigin="anonymous">
 
     <link rel="stylesheet" href="/weatherapp/css/compiled/style.css">
 
