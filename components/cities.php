@@ -1,10 +1,8 @@
 <?php
 
-
-$config = require_once "./config.php";
-$api_key = $config['OPENWEATHER_API_KEY'];
+$api_key = getenv('OPENWEATHER_API_KEY');
+$pdo = require_once __DIR__ . '/../functions/db.php';
 require_once __DIR__ . '/../functions/weather.php';
-$cities = require __DIR__ . '/../data/cities.php';
 
 
 $units = $_GET['units'] ?? 'metric';
@@ -12,11 +10,14 @@ if ($units !== 'metric' && $units !== 'imperial') {
     $units = 'metric';
 }
 
+
+$query = 'SELECT id, name FROM cities ORDER BY name';
+
+$cities = $pdo->query($query)->fetchAll();
 ?>
 
 <div class="main-container">
     <section class="cities-grid">
-
         <?php foreach ($cities as $city): ?>
             <?php
 

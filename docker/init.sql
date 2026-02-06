@@ -5,14 +5,9 @@ CREATE TABLE IF NOT EXISTS cities
     PRIMARY
     KEY,
     name
-    VARCHAR
-(
-    120
-) NOT NULL UNIQUE,
-    created_at TIMESTAMP DEFAULT NOW
-(
-)
-    );
+    VARCHAR(120) NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT NOW()
+);
 
 INSERT INTO cities (name)
 VALUES ('Riga'),
