@@ -1,0 +1,31 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      OPENWEATHER_API_KEY: ${OPENWEATHER_API_KEY}
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: weatherapp
+      DB_USER: weatherapp
+      DB_PASS: weatherapp
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: weatherapp
+      POSTGRES_USER: weatherapp
+      POSTGRES_PASSWORD: weatherapp
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db_data:

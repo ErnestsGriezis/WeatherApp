@@ -2,8 +2,8 @@
     <div class="main-container">
         <div class="footer-inner">
             <div class="footer-brand">
-                <a href="/weatherapp/index.php" class="footer-logo">
-                    <img src="/weatherapp/images/logo.png" alt="WeatherApp logo">
+                <a href="/index.php" class="footer-logo">
+                    <img src="/images/logo.png" alt="WeatherApp logo">
                 </a>
             </div>
 

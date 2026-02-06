@@ -12,7 +12,7 @@ if ($units !== 'metric' && $units !== 'imperial') {
 
 $id_raw = $_GET['id'] ?? null;
 if ($id_raw === null || !ctype_digit($id_raw)) {
-    header("Location: /weatherapp/index.php");
+    header("Location: /index.php");
     exit;
 }
 $id = (int)$id_raw;
@@ -26,19 +26,19 @@ foreach ($cities as $city) {
 }
 
 if (!$city_name) {
-    header("Location: /weatherapp/index.php");
+    header("Location: /index.php");
     exit;
 }
 
 $weather = get_city_weather($city_name, $api_key, $units);
 if (!($weather['ok'])) {
-    header("Location: /weatherapp/index.php");
+    header("Location: /index.php");
     exit;
 }
 ?>
 
-<?php require_once "../header.php" ?>
-<?php require_once "../components/cities-controls.php" ?>
+<?php require_once __DIR__ . "/../header.php"; ?>
+<?php require_once __DIR__ . "/../components/cities-controls.php"; ?>
 
 <div class="main-container">
     <?php require_once __DIR__ . "/city-hero.php"; ?>
@@ -46,4 +46,4 @@ if (!($weather['ok'])) {
     <?php require_once __DIR__ . "/city-details.php"; ?>
 </div>
 
-<?php require_once "../footer.php" ?>
+<?php require_once __DIR__ . "/../footer.php" ?>

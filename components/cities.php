@@ -32,7 +32,7 @@ if ($units !== 'metric' && $units !== 'imperial') {
             ?>
 
             <?php if ($has_weather_data): ?>
-                <a href="/weatherapp/components/city.php?id=<?= $city['id']; ?>&units=<?= htmlspecialchars($units) ?>"
+                <a href="/components/city.php?id=<?= $city['id']; ?>&units=<?= htmlspecialchars($units) ?>"
                    class="city-card">
                     <article class="inner-city-card last-child-without-margin">
 
