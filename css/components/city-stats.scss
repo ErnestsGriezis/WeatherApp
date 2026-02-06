@@ -1,0 +1,53 @@
+@use "../common/base" as *;
+
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 16px;
+  margin-bottom: 18px;
+
+  .stat-card {
+    width: calc((100% - (16px * 2)) / 3.001);
+    background: $white;
+    border: 1px solid $border;
+    border-radius: 12px;
+    padding: 14px 14px;
+
+    &.wide {
+      width: calc((100% - 16px) / 2.001);
+    }
+
+    .stat-label {
+      font-family: FontBold;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: $muted;
+      margin-bottom: 10px;
+    }
+
+    .stat-value {
+      font-family: FontExtraBold;
+      font-size: 22px;
+      color: $ink;
+      margin-bottom: 6px;
+    }
+
+    .stat-sub {
+      font-size: 13px;
+      color: $muted;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .stats-grid {
+    .stat-card {
+      width: calc((100% - 16px) / 2.001);
+
+      &.wide {
+        width: 100%;
+      }
+    }
+  }
+}

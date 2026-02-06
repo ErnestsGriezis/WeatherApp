@@ -51,12 +51,11 @@ function get_city_weather(string $city_name, string $api_key, string $units): ar
     $wind_deg = isset($data['wind']['deg']) ? (int)$data['wind']['deg'] : null;
     $wind_gust = isset($data['wind']['gust']) ? round((float)$data['wind']['gust'], 1) : null;
 
-    $rain_1h = isset($data['rain']['1h']) ? (float)$data['rain']['1h'] : null;
-    $rain_3h = isset($data['rain']['3h']) ? (float)$data['rain']['3h'] : null;
+    $rain_1h = isset($data['rain']['1h']) ? (float)$data['rain']['1h'] : 0.0;
+    $rain_3h = isset($data['rain']['3h']) ? (float)$data['rain']['3h'] : 0.0;
 
-    $snow_1h = isset($data['snow']['1h']) ? (float)$data['snow']['1h'] : null;
-    $snow_3h = isset($data['snow']['3h']) ? (float)$data['snow']['3h'] : null;
-
+    $snow_1h = isset($data['snow']['1h']) ? (float)$data['snow']['1h'] : 0.0;
+    $snow_3h = isset($data['snow']['3h']) ? (float)$data['snow']['3h'] : 0.0;
 
     $timezone_offset = isset($data['timezone']) ? (int)$data['timezone'] : 0;
     $dt = isset($data['dt']) ? (int)$data['dt'] : null;
@@ -120,4 +119,10 @@ function get_wind_unit_symbol(string $units): string
     }
 
     return 'm/s';
+}
+
+function format_local_time(int $unix, int $timezone_offset, string $format = 'H:i'): string
+{
+
+    return gmdate($format, $unix + $timezone_offset);
 }

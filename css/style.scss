@@ -8,5 +8,9 @@
 @use "components/cities";
 @use "components/cities-controls";
 @use "components/footer";
-@use "components/city";
+@use "components/city-details";
+@use "components/city-hero";
+@use "components/city-stats";
 
+//Pages
+@use "pages/city";
