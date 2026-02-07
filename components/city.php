@@ -14,7 +14,6 @@ if ($id_raw === null || !ctype_digit($id_raw)) {
     header("Location: /index.php");
     exit;
 }
-
 $id = (int)$id_raw;
 
 $stmt = $pdo->prepare('SELECT name FROM cities WHERE id = :id');

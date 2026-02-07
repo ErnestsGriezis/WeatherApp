@@ -9,6 +9,8 @@
 
   .city-card {
     width: calc((100% - (40px * 3)) / 4.001);
+    position: relative;
+    transition: all 0.2s linear;
 
     &:hover {
       box-shadow: $defaultBoxShadow;
@@ -49,6 +51,35 @@
         flex-shrink: 0;
       }
 
+    }
+  }
+
+  .city-card-link {
+    display: block;
+    height: 100%;
+  }
+
+  .city-delete-form {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+  }
+
+  .city-delete-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    background: $brandOrange;
+    color: $white;
+    font-family: FontMedium;
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.2s linear;
+
+
+    &:hover {
+      background: red;
     }
   }
 }

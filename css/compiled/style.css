@@ -74,6 +74,32 @@ button {
   background: #f5a623 !important;
   color: #ffffff !important;
 }
+.btn-submit {
+  background: #1f86d1 !important;
+  padding: 12px 24px;
+}
+.btn-submit:hover {
+  background: #f5a623 !important;
+  color: #ffffff !important;
+}
+
+input[type=text] {
+  padding: 12px 16px;
+  font-family: FontRegular;
+  font-size: 14px;
+  color: #0b1220;
+  background: #ffffff;
+  border: 1px solid rgba(11, 18, 32, 0.12);
+  border-radius: 4px;
+  transition: all 0.2s linear;
+}
+input[type=text]::placeholder {
+  color: rgba(11, 18, 32, 0.6);
+}
+input[type=text]:focus {
+  outline: none;
+  border-color: #1f86d1;
+}
 
 .last-child-without-margin > *:last-child {
   margin-bottom: 0 !important;
@@ -181,6 +207,8 @@ b {
 }
 .cities-grid .city-card {
   width: calc((100% - 120px) / 4.001);
+  position: relative;
+  transition: all 0.2s linear;
 }
 .cities-grid .city-card:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -214,6 +242,30 @@ b {
   max-height: 80px;
   flex-shrink: 0;
 }
+.cities-grid .city-card-link {
+  display: block;
+  height: 100%;
+}
+.cities-grid .city-delete-form {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+}
+.cities-grid .city-delete-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  background: #f5a623;
+  color: #ffffff;
+  font-family: FontMedium;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.2s linear;
+}
+.cities-grid .city-delete-btn:hover {
+  background: red;
+}
 
 @media screen and (max-width: 1440px) {
   .cities-grid {
@@ -243,6 +295,17 @@ b {
   align-items: center;
   gap: 16px;
   padding: 28px 0;
+}
+.cities-controls .city-add > .city-add-form {
+  display: flex;
+  gap: 16px;
+}
+.cities-controls .city-add > .city-add-form > .city-add-message {
+  display: flex;
+  align-self: center;
+  font-size: 14px;
+  font-family: FontMedium;
+  color: red;
 }
 .cities-controls .units-switch {
   margin-left: auto;

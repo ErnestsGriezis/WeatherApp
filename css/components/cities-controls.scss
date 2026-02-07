@@ -6,8 +6,19 @@
   gap: 16px;
   padding: 28px 0;
 
-  .add-city {
+  .city-add {
+    > .city-add-form {
+      display: flex;
+      gap: 16px;
 
+      > .city-add-message {
+        display: flex;
+        align-self: center;
+        font-size: 14px;
+        font-family: FontMedium;
+        color: red;
+      }
+    }
   }
 
   .units-switch {
