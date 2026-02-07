@@ -5,6 +5,20 @@
   box-sizing: border-box;
 }
 
+body {
+  transition: all 0.2s linear;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #f5a623;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -203,7 +217,8 @@ b {
   flex-wrap: wrap;
   column-gap: 40px;
   row-gap: 48px;
-  margin-bottom: 45px;
+  margin-bottom: 48px;
+  margin-top: 16px;
 }
 .cities-grid .city-card {
   width: calc((100% - 120px) / 4.001);
@@ -292,6 +307,7 @@ b {
 }
 .cities-controls {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 16px;
   padding: 28px 0;
@@ -338,7 +354,7 @@ b {
 }
 
 .site-footer {
-  margin-top: 56px;
+  margin-top: 96px;
   background: #f6f9fc;
   border-top: 1px solid rgba(11, 18, 32, 0.12);
   padding: 28px 0;
@@ -347,6 +363,7 @@ b {
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-bottom: 32px;
 }
 .site-footer .footer-logo {
   display: inline-flex;
@@ -380,11 +397,30 @@ b {
   color: rgba(11, 18, 32, 0.6);
   font-size: 13px;
 }
+.site-footer .footer-credit {
+  font-family: FontRegular;
+  font-size: 16px;
+  text-align: center;
+}
+.site-footer .footer-credit .footer-author {
+  font-family: FontMedium;
+}
 
+@media screen and (max-width: 1024px) {
+  .site-footer {
+    margin-top: 72px;
+  }
+}
 @media screen and (max-width: 767px) {
+  .site-footer {
+    margin-top: 48px;
+  }
   .site-footer .footer-inner {
     flex-direction: column;
     gap: 18px;
+  }
+  .site-footer .footer-inner .footer-links {
+    margin: 0 auto;
   }
   .site-footer .footer-copy {
     margin-left: 0;

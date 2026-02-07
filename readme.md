@@ -22,7 +22,7 @@ PHP weather application with city management.
 
 1. Clone repository
 2. Create `.env` file with `OPENWEATHER_API_KEY`
-3. Run with Docker
+3. Run with Docker (docker compose up --build)
 4. Open `http://localhost:8080`
 
 ## Notes

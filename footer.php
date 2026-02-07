@@ -1,5 +1,5 @@
 <footer class="site-footer">
-    <div class="main-container">
+    <div class="main-container last-child-without-margin">
         <div class="footer-inner">
             <div class="footer-brand">
                 <a href="/index.php" class="footer-logo">
@@ -16,6 +16,10 @@
             <div class="footer-copy">
                 <p>© <?= date('Y'); ?> WeatherApp</p>
             </div>
+
+        </div>
+        <div class="footer-credit">
+            Developed by <span class="footer-author">Ernests</span>
         </div>
     </div>
 </footer>
