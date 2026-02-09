@@ -18,7 +18,7 @@ $imperialUrl = '?' . http_build_query($paramsImperial);
 <div class="main-container">
     <div class="cities-controls">
 
-        <div class="city-add">
+        <div class="city-add slide-in-left">
             <form class="city-add-form">
                 <input type="text" name="city_name" id="city-name" placeholder="City"/>
 
@@ -32,7 +32,7 @@ $imperialUrl = '?' . http_build_query($paramsImperial);
         </div>
 
 
-        <div class="units-switch">
+        <div class="units-switch slide-in-right">
             <a class="units-btn <?= $currentUnits === 'metric' ? 'is-active' : '' ?>"
                href="<?= htmlspecialchars($metricUrl) ?>">°C</a>
             <a class="units-btn <?= $currentUnits === 'imperial' ? 'is-active' : '' ?>"

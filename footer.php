@@ -26,6 +26,7 @@
 
 <script src="/js/jquery.js"></script>
 <script src="/js/city-add.js"></script>
+<script src="/js/scroll-animations.js"></script>
 
 
 </body>

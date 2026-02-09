@@ -8,7 +8,7 @@ $cities = $pdo->query($query)->fetchAll();
 ?>
 
 <div class="main-container">
-    <section class="cities-grid">
+    <section class="cities-grid fade-in">
         <?php foreach ($cities as $city): ?>
             <?php
 

@@ -1,4 +1,4 @@
-<section class="city-hero">
+<section class="city-hero slide-in-up">
     <div class="hero-left">
         <div class="hero-title-row">
             <h1 class="city-title"><?= $city_name ?></h1>

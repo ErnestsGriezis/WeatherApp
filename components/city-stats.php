@@ -1,6 +1,4 @@
-
-
-<section class="stats-grid">
+<section class="stats-grid slide-in-left">
     <article class="stat-card">
         <div class="stat-label">Temperature</div>
         <div class="stat-value">

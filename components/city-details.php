@@ -1,4 +1,4 @@
-<section class="details-split">
+<section class="details-split slide-in-right">
     <article class="panel">
         <h2 class="panel-title">Detailed breakdown</h2>
 
