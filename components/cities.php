@@ -15,6 +15,10 @@ $cities = $pdo->query($query)->fetchAll();
             $city_name = $city['name'];
             $weather = get_city_weather($city_name, $api_key, $units);
 
+            if (!($weather['ok'] ?? false)) {
+                continue;
+            }
+
             $has_weather_data = $weather['ok'];
             $city_temp = $weather['temp'];
             $icon_url = $weather['icon_url'];

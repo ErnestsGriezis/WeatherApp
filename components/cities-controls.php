@@ -22,7 +22,10 @@ $imperialUrl = '?' . http_build_query($paramsImperial);
             <form class="city-add-form">
                 <input type="text" name="city_name" id="city-name" placeholder="City"/>
 
-                <button type="button" class="btn btn-submit city-add-submit">Add city</button>
+                <button type="button" class="btn btn-submit city-add-submit">
+                    <span class="btn-text">Add city</span>
+                    <span class="btn-loader"></span>
+                </button>
 
                 <div class="city-add-message"></div>
             </form>

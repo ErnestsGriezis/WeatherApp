@@ -305,6 +305,11 @@ b {
     width: 100%;
   }
 }
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .cities-controls {
   display: flex;
   flex-wrap: wrap;
@@ -322,6 +327,31 @@ b {
   font-size: 14px;
   font-family: FontMedium;
   color: red;
+}
+.cities-controls .city-add > .city-add-form .city-add-submit {
+  position: relative;
+}
+.cities-controls .city-add > .city-add-form .city-add-submit .btn-loader {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  opacity: 0;
+  visibility: hidden;
+}
+.cities-controls .city-add > .city-add-form .city-add-submit.is-loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+.cities-controls .city-add > .city-add-form .city-add-submit.is-loading .btn-text {
+  opacity: 0;
+}
+.cities-controls .city-add > .city-add-form .city-add-submit.is-loading .btn-loader {
+  opacity: 1;
+  visibility: visible;
 }
 .cities-controls .units-switch {
   margin-left: auto;

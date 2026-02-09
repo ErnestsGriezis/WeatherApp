@@ -2,11 +2,15 @@ $(document).ready(function () {
     $(document).on("click", ".city-add-submit", function () {
         const cityName = $("#city-name").val().trim();
         const $msg = $(".city-add-message");
+        const $btn = $(this);
+
+        loading($btn)
 
         $msg.text("");
 
         if (!cityName) {
             $msg.text("City name is empty");
+            stopLoading($btn);
             return;
         }
 
@@ -21,13 +25,25 @@ $(document).ready(function () {
                     return;
                 }
 
-                $(".city-add-message").text("City added: " + res.city.name);
+                $msg.text("City added: " + res.city.name);
                 $("#city-name").val("");
                 location.reload();
             },
             error: function () {
                 $msg.text("Server error");
+            },
+            complete: function () {
+                stopLoading($btn);
             }
         });
     });
+
+
+    function loading($button) {
+        $button.addClass("is-loading");
+    }
+
+    function stopLoading($button) {
+        $button.removeClass("is-loading");
+    }
 });
